@@ -21,19 +21,23 @@
             android:layout_columnWeight="1"
             android:background="@color/white">
 
-            <Button
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_00_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="#DDDDDD"
                 android:clickable="true"
                 android:contentDescription="@string/tmp"
-                android:drawableRight="@drawable/tmpimg"
                 android:focusable="true"
                 android:text="" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="0dp"
@@ -43,11 +47,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="1dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_01_btn"
@@ -67,19 +71,23 @@
             android:layout_columnWeight="1"
             android:background="@color/white">
 
-            <Button
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_02_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="#DDDDDD"
                 android:clickable="true"
                 android:contentDescription="@string/tmp"
-                android:drawableRight="@drawable/tmpimg"
                 android:focusable="true"
                 android:text="" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="0dp"
@@ -89,11 +97,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="1dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_03_btn"
@@ -113,19 +121,23 @@
             android:layout_columnWeight="1"
             android:background="@color/white">
 
-            <Button
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_10_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="#DDDDDD"
                 android:clickable="true"
                 android:contentDescription="@string/tmp"
-                android:drawableRight="@drawable/tmpimg"
                 android:focusable="true"
                 android:text="" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="0dp"
@@ -135,11 +147,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="1dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_11_btn"
@@ -159,19 +171,23 @@
             android:layout_columnWeight="1"
             android:background="@color/white">
 
-            <Button
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_12_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="#DDDDDD"
                 android:clickable="true"
                 android:contentDescription="@string/tmp"
-                android:drawableRight="@drawable/tmpimg"
                 android:focusable="true"
                 android:text="" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="0dp"
@@ -181,11 +197,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="1dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_13_btn"
@@ -205,19 +221,23 @@
             android:layout_columnWeight="1"
             android:background="@color/white">
 
-            <Button
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_20_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="#DDDDDD"
                 android:clickable="true"
                 android:contentDescription="@string/tmp"
-                android:drawableRight="@drawable/tmpimg"
                 android:focusable="true"
                 android:text="" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="0dp"
@@ -227,11 +247,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="1dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_21_btn"
@@ -251,19 +271,23 @@
             android:layout_columnWeight="1"
             android:background="@color/white">
 
-            <Button
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_22_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="#DDDDDD"
                 android:clickable="true"
                 android:contentDescription="@string/tmp"
-                android:drawableRight="@drawable/tmpimg"
                 android:focusable="true"
                 android:text="" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="0dp"
@@ -273,11 +297,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="1dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_23_btn"
@@ -297,19 +321,23 @@
             android:layout_columnWeight="1"
             android:background="@color/white">
 
-            <Button
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_30_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="#DDDDDD"
                 android:clickable="true"
                 android:contentDescription="@string/tmp"
-                android:drawableRight="@drawable/tmpimg"
                 android:focusable="true"
                 android:text="" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="0dp"
@@ -319,11 +347,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="1dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_31_btn"
@@ -343,19 +371,23 @@
             android:layout_columnWeight="1"
             android:background="@color/white">
 
-            <Button
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_32_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="#DDDDDD"
                 android:clickable="true"
                 android:contentDescription="@string/tmp"
-                android:drawableRight="@drawable/tmpimg"
                 android:focusable="true"
                 android:text="" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="0dp"
@@ -365,11 +397,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="1dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/tmpimg"
+                android:elevation="3dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_33_btn"
