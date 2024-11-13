@@ -1,16 +1,16 @@
-package com.example.mp_24_launchpad.ui.dashboard;
+package com.example.mp_24_launchpad.ui.guitar;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class GuitarViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public GuitarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is home fragment");
     }
 
     public LiveData<String> getText() {

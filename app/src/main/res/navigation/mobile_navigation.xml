@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_guitar">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.mp_24_launchpad.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_guitar"
+        android:name="com.example.mp_24_launchpad.ui.guitar.GuitarFragment"
+        android:label="@string/title_guitar"
+        tools:layout="@layout/fragment_guitar" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.mp_24_launchpad.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_drum"
+        android:name="com.example.mp_24_launchpad.ui.drum.DrumFragment"
+        android:label="@string/title_drum"
+        tools:layout="@layout/fragment_drum" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.mp_24_launchpad.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_piano"
+        android:name="com.example.mp_24_launchpad.ui.piano.PianoFragment"
+        android:label="@string/title_piano"
+        tools:layout="@layout/fragment_piano" />
 </navigation>

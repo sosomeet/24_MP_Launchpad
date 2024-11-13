@@ -1,14 +1,14 @@
-package com.example.mp_24_launchpad.ui.notifications;
+package com.example.mp_24_launchpad.ui.piano;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class PianoViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public PianoViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is notifications fragment");
     }

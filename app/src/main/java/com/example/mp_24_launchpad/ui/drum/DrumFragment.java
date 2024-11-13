@@ -1,4 +1,4 @@
-package com.example.mp_24_launchpad.ui.home;
+package com.example.mp_24_launchpad.ui.drum;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.mp_24_launchpad.databinding.FragmentHomeBinding;
+import com.example.mp_24_launchpad.databinding.FragmentDrumBinding;
 
-public class HomeFragment extends Fragment {
+public class DrumFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentDrumBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        DrumViewModel drumViewModel =
+                new ViewModelProvider(this).get(DrumViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentDrumBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textDrum;
+        drumViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
