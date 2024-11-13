@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:layout_margin="1dp"
         android:columnCount="4"
+        android:padding="5dp"
         android:rowCount="4">
 
         <FrameLayout
@@ -22,11 +23,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_00_btn"
@@ -47,11 +48,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_01_btn"
@@ -72,11 +73,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_02_btn"
@@ -97,11 +98,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_03_btn"
@@ -122,11 +123,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_10_btn"
@@ -147,11 +148,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_11_btn"
@@ -172,11 +173,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_12_btn"
@@ -197,11 +198,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_13_btn"
@@ -222,11 +223,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_20_btn"
@@ -247,11 +248,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_21_btn"
@@ -272,11 +273,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_22_btn"
@@ -297,11 +298,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_23_btn"
@@ -322,11 +323,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_30_btn"
@@ -347,11 +348,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_31_btn"
@@ -372,11 +373,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_32_btn"
@@ -397,11 +398,11 @@
             android:background="@color/white">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tmpimg"
-                android:elevation="3dp"/>
+                android:elevation="3dp"
+                android:src="@drawable/tmpimg" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/guitar_33_btn"
