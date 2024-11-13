@@ -10,7 +10,7 @@ public class DrumViewModel extends ViewModel {
 
     public DrumViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is drum fragment");
     }
 
     public LiveData<String> getText() {

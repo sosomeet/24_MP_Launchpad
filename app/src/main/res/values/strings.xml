@@ -3,4 +3,5 @@
     <string name="title_guitar">guitar</string>
     <string name="title_drum">drum</string>
     <string name="title_piano">piano</string>
+    <string name="tmp">tmp</string>
 </resources>

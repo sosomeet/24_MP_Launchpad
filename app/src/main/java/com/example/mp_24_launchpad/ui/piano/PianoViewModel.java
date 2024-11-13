@@ -10,7 +10,7 @@ public class PianoViewModel extends ViewModel {
 
     public PianoViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is piano fragment");
     }
 
     public LiveData<String> getText() {

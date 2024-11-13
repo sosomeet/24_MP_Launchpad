@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,8 +25,7 @@ public class GuitarFragment extends Fragment {
         binding = FragmentGuitarBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGuitar;
-        guitarViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final GridLayout gridLayout = binding.guitarGl;
         return root;
     }
 

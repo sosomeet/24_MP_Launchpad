@@ -10,7 +10,7 @@ public class GuitarViewModel extends ViewModel {
 
     public GuitarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is guitar fragment");
     }
 
     public LiveData<String> getText() {
