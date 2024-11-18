@@ -2,6 +2,7 @@ package com.example.mp_24_launchpad.ui.drum;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,13 @@ public class DrumFragment extends Fragment {
 
     private FragmentDrumBinding binding;
     AppCompatButton drum_btn_arr[][] = new AppCompatButton[4][4];
+
+
+    private SoundPool soundPool; // 사운드 재생 위한 객체 생성
+    private int soundCrashCymbal, soundTomHigh, soundTomMid, soundTomLow;
+    private int soundRideCymbal, soundShaker, soundCowbell, soundHighhatClosed;
+    private int soundSplashCymbal, soundSnare, soundTambourine, soundHighhatOpened;
+    private int soundKick, soundReverseCymbal, soundClap, soundRimshot;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
