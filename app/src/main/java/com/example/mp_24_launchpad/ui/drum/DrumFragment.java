@@ -24,11 +24,8 @@ public class DrumFragment extends Fragment {
     AppCompatButton drum_btn_arr[][] = new AppCompatButton[4][4];
 
 
-    private SoundPool soundPool; // 사운드 재생 위한 객체 생성
-    private int soundCrashCymbal, soundTomHigh, soundTomMid, soundTomLow;
-    private int soundRideCymbal, soundShaker, soundCowbell, soundHighhatClosed;
-    private int soundSplashCymbal, soundSnare, soundTambourine, soundHighhatOpened;
-    private int soundKick, soundReverseCymbal, soundClap, soundRimshot;
+    private SoundPool soundPool;
+    private int soundDrum[] = new int[16];
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
