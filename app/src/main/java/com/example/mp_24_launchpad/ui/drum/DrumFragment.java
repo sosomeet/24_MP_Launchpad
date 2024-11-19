@@ -23,8 +23,7 @@ public class DrumFragment extends Fragment {
     private FragmentDrumBinding binding;
     AppCompatButton drum_btn_arr[][] = new AppCompatButton[4][4];
 
-
-    private SoundPool soundPool;
+    //private SoundPool soundPool;
     private int soundDrum[] = new int[16];
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -44,114 +43,193 @@ public class DrumFragment extends Fragment {
                 drum_btn_arr[i][j] = root.findViewById(resId);
             }
         }
+        SoundPool soundPool = new SoundPool.Builder().setMaxStreams(16).build();
 
+
+        int[][] drum_sound_id= {
+                {R.raw.crash_cymbal, R.raw.tom_high, R.raw.tom_mid, R.raw.tom_low},
+                {R.raw.ride_cymbal, R.raw.shaker, R.raw.cowbell, R.raw.highhat_closed},
+                {R.raw.splash_cymbal, R.raw.snare, R.raw.tambourine, R.raw.highhat_opened},
+                {R.raw.kick, R.raw.reverse_cymbal, R.raw.clap, R.raw.rimshot}
+        };
+
+        int[][] drum_soundpool = {
+                {soundPool.load(getContext(), drum_sound_id[0][0], 1),
+                        soundPool.load(getContext(), drum_sound_id[0][1], 1),
+                        soundPool.load(getContext(), drum_sound_id[0][2], 1),
+                        soundPool.load(getContext(), drum_sound_id[0][3], 1)},
+
+                {soundPool.load(getContext(), drum_sound_id[1][0], 1),
+                        soundPool.load(getContext(), drum_sound_id[1][1], 1),
+                        soundPool.load(getContext(), drum_sound_id[1][2], 1),
+                        soundPool.load(getContext(), drum_sound_id[1][3], 1)},
+
+                {soundPool.load(getContext(), drum_sound_id[2][0], 1),
+                        soundPool.load(getContext(), drum_sound_id[2][1], 1),
+                        soundPool.load(getContext(), drum_sound_id[2][2], 1),
+                        soundPool.load(getContext(), drum_sound_id[2][3], 1)},
+
+                {soundPool.load(getContext(), drum_sound_id[3][0], 1),
+                        soundPool.load(getContext(), drum_sound_id[3][1], 1),
+                        soundPool.load(getContext(), drum_sound_id[3][2], 1),
+                        soundPool.load(getContext(), drum_sound_id[3][3], 1)}
+        };
+
+
+        // crash cymbal
         drum_btn_arr[0][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "00", Toast.LENGTH_SHORT).show();
+                soundPool.play(drum_soundpool[0][0], 1.0f,1.0f,1,0,1.0f);
+
                 drum_btn_arr[0][0].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
             }
         });
-
+        // Tom(high)
         drum_btn_arr[0][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                soundPool.play(drum_soundpool[0][1], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[0][1].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
             }
         });
 
+        // Tom(mid)
         drum_btn_arr[0][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[0][2], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[0][2].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        // Tom (low)
         drum_btn_arr[0][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[0][3], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[0][3].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        // Ride Cymbal
         drum_btn_arr[1][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[1][0], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[1][0].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        // Shaker
         drum_btn_arr[1][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[1][1], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[1][1].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        // cowbell
         drum_btn_arr[1][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[1][2], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[1][2].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        // High Hat(closed)
         drum_btn_arr[1][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[1][3], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[1][3].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
+
+        // splash cymbal
         drum_btn_arr[2][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[2][0], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[2][0].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        //snare
         drum_btn_arr[2][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[2][1], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[2][1].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        //tambourine
         drum_btn_arr[2][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[2][2], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[2][2].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        // high hat (opened)
         drum_btn_arr[2][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[2][3], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[2][3].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
+
+        // kick
         drum_btn_arr[3][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[3][0], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[3][0].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        //reverse symbal
         drum_btn_arr[3][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[3][1], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[3][1].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        // clap
         drum_btn_arr[3][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[3][2], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[3][2].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
 
+        // rim shot
         drum_btn_arr[3][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(drum_soundpool[3][3], 1.0f,1.0f,1,0,1.0f);
+                drum_btn_arr[3][3].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
 
             }
         });
