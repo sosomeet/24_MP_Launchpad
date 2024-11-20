@@ -1,9 +1,16 @@
 package com.example.mp_24_launchpad.ui.guitar;
 
+import android.animation.ValueAnimator;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.InsetDrawable;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +31,7 @@ public class GuitarFragment extends Fragment {
 
     private FragmentGuitarBinding binding;
     AppCompatButton guitar_btn_arr[][] = new AppCompatButton[4][4];
+    private Handler handler;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,48 +52,60 @@ public class GuitarFragment extends Fragment {
         }
 
         SoundPool soundPool = new SoundPool.Builder().setMaxStreams(16).build();
+
+
         // bring the guitar resources id from R.raw
-        int[][] guitar_sound_id = {
+        int[][] guitar_sound_raw = {
                 {R.raw.tmp_00, R.raw.tmp_01, R.raw.tmp_02, R.raw.tmp_03},
                 {R.raw.tmp_10, R.raw.tmp_11, R.raw.tmp_00, R.raw.tmp_01},
                 {R.raw.tmp_02, R.raw.tmp_03, R.raw.tmp_10, R.raw.tmp_11},
                 {R.raw.tmp_00, R.raw.tmp_01, R.raw.tmp_02, R.raw.tmp_03}
         };
+
         // set the guitar resources for use soundPool
         int[][] guitar_soundpool = {
-                {soundPool.load(getContext(), guitar_sound_id[0][0], 1),
-                        soundPool.load(getContext(), guitar_sound_id[0][1], 1),
-                        soundPool.load(getContext(), guitar_sound_id[0][2], 1),
-                        soundPool.load(getContext(), guitar_sound_id[0][3], 1)},
-                {soundPool.load(getContext(), guitar_sound_id[1][0], 1),
-                        soundPool.load(getContext(), guitar_sound_id[1][1], 1),
-                        soundPool.load(getContext(), guitar_sound_id[1][2], 1),
-                        soundPool.load(getContext(), guitar_sound_id[1][3], 1)},
-                {soundPool.load(getContext(), guitar_sound_id[2][0], 1),
-                        soundPool.load(getContext(), guitar_sound_id[2][1], 1),
-                        soundPool.load(getContext(), guitar_sound_id[2][2], 1),
-                        soundPool.load(getContext(), guitar_sound_id[2][3], 1)},
-                {soundPool.load(getContext(), guitar_sound_id[3][0], 1),
-                        soundPool.load(getContext(), guitar_sound_id[3][1], 1),
-                        soundPool.load(getContext(), guitar_sound_id[3][2], 1),
-                        soundPool.load(getContext(), guitar_sound_id[3][3], 1)}
+                {soundPool.load(getContext(), guitar_sound_raw[0][0], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[0][1], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[0][2], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[0][3], 1)},
+                {soundPool.load(getContext(), guitar_sound_raw[1][0], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[1][1], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[1][2], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[1][3], 1)},
+                {soundPool.load(getContext(), guitar_sound_raw[2][0], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[2][1], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[2][2], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[2][3], 1)},
+                {soundPool.load(getContext(), guitar_sound_raw[3][0], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[3][1], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[3][2], 1),
+                        soundPool.load(getContext(), guitar_sound_raw[3][3], 1)}
         };
+
+        float[][] guitar_sound_duration = new float[4][4];
+        MediaPlayer mediaPlayer[][] = new MediaPlayer[4][4];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                mediaPlayer[i][j] = MediaPlayer.create(getContext(), guitar_sound_raw[i][j]);
+                guitar_sound_duration[i][j] = mediaPlayer[i][j].getDuration();
+                mediaPlayer[i][j].release();
+            }
+        }
+
+        final Drawable originalBackground = guitar_btn_arr[0][0].getBackground();
 
         guitar_btn_arr[0][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // sound priority is higher than change color
-                soundPool.play(guitar_soundpool[0][0], 1.0f, 1.0f, 1, 0, 1.0f);
-
-                // if sound is called, button color change
-                guitar_btn_arr[0][0].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                // pushBtn(btn row, btn col, center color, edge color, etc var(DO NOT MISS OR CHANGE))
+                pushBtn(0, 0, "#FF54F4", "#FF00EE", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
 
         guitar_btn_arr[0][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(guitar_soundpool[0][1], 1.0f, 1.0f, 1, 0, 1.0f);
+                pushBtn(0, 1, "#f8e602", "#4bff21", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
 
@@ -108,8 +128,7 @@ public class GuitarFragment extends Fragment {
         guitar_btn_arr[1][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(guitar_soundpool[1][0], 1.0f, 1.0f, 1, 0, 1.0f);
-
+                pushBtn(1, 0, "#00f0ff", "#00FFFF", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
 
@@ -193,6 +212,69 @@ public class GuitarFragment extends Fragment {
 
         return root;
     }
+
+    private void pushBtn(int i, int j, String centerColor, String edgeColor, SoundPool soundPool, int[][] guitar_soundpool, float[][] guitar_sound_duration, Drawable originalBackground) {
+        // sound priority is higher than change color
+        soundPool.play(guitar_soundpool[i][j], 1.0f, 1.0f, 1, 0, 1.0f);
+
+        // if sound is called, button color change
+        setGradientAnim(
+                guitar_btn_arr[i][j],
+                centerColor,
+                edgeColor,
+                (long) guitar_sound_duration[i][j]
+        );
+
+        // if sound is end, color is roll back
+        handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(() -> {
+            guitar_btn_arr[i][j].setBackground(originalBackground);
+        }, (long) guitar_sound_duration[i][j]);
+    }
+
+    private void setGradientAnim(AppCompatButton button, String colorCenter, String colorEdge, long soundDuration) {
+        button.post(() -> {
+            // draw gradient
+            GradientDrawable gradientDrawable = new GradientDrawable(
+                    GradientDrawable.Orientation.TL_BR,
+                    new int[]{Color.WHITE, Color.parseColor(colorEdge), Color.parseColor(colorCenter)}
+            );
+
+            // gradient img shape
+            gradientDrawable.setShape(GradientDrawable.RECTANGLE);
+            // gradient shape (circle)
+            gradientDrawable.setGradientType(GradientDrawable.RADIAL_GRADIENT);
+
+            // gradient animation
+            ValueAnimator animator = ValueAnimator.ofFloat(50f, 250f);
+            animator.setDuration(soundDuration / 2);
+            animator.setRepeatMode(ValueAnimator.REVERSE);
+            animator.setRepeatCount(ValueAnimator.INFINITE);
+
+            animator.addUpdateListener(animation -> {
+                float radius = (float) animation.getAnimatedValue();
+                gradientDrawable.setGradientRadius(radius);
+                button.invalidate();
+            });
+
+            animator.start();
+
+            // set the gradient img to match the button size
+            int cornerRadius = dpToPx(button, 4);
+            gradientDrawable.setCornerRadius(cornerRadius);
+            int p = dpToPx(button, 5);
+            InsetDrawable insetDrawable = new InsetDrawable(gradientDrawable, p / 2, p, p / 2, p);
+
+            // show gradient img
+            button.setBackground(insetDrawable);
+        });
+    }
+
+    private int dpToPx(AppCompatButton button, int dp) {
+        // dp to px method
+        return (int) (dp * button.getContext().getResources().getDisplayMetrics().density);
+    }
+
 
     @Override
     public void onDestroyView() {

@@ -47,10 +47,7 @@ public class DrumFragment extends Fragment {
 
 
         int[][] drum_sound_id= {
-                {R.raw.crash_cymbal, R.raw.tom_high, R.raw.tom_mid, R.raw.tom_low},
-                {R.raw.ride_cymbal, R.raw.shaker, R.raw.cowbell, R.raw.highhat_closed},
-                {R.raw.splash_cymbal, R.raw.snare, R.raw.tambourine, R.raw.highhat_opened},
-                {R.raw.kick, R.raw.reverse_cymbal, R.raw.clap, R.raw.rimshot}
+
         };
 
         int[][] drum_soundpool = {
