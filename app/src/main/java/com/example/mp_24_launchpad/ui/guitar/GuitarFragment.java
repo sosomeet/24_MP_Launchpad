@@ -43,11 +43,14 @@ public class GuitarFragment extends Fragment {
 
         final GridLayout gridLayout = binding.guitarGl;
 
+        final Drawable originalBackground = setOriginalBackground();
+
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 String buttonId = "guitar_" + i + j + "_btn";
                 int resId = getResources().getIdentifier(buttonId, "id", getContext().getPackageName());
                 guitar_btn_arr[i][j] = root.findViewById(resId);
+                guitar_btn_arr[i][j].setBackground(originalBackground);
             }
         }
 
@@ -92,8 +95,6 @@ public class GuitarFragment extends Fragment {
             }
         }
 
-        final Drawable originalBackground = guitar_btn_arr[0][0].getBackground();
-
         guitar_btn_arr[0][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,16 +113,14 @@ public class GuitarFragment extends Fragment {
         guitar_btn_arr[0][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(guitar_soundpool[0][2], 1.0f, 1.0f, 1, 0, 1.0f);
+                pushBtn(0, 2, "#FF5876", "#C0263E", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
 
         guitar_btn_arr[0][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(guitar_soundpool[0][3], 1.0f, 1.0f, 1, 0, 1.0f);
-
-
+                pushBtn(0, 3, "#F0C9C2", "#5AB7FA", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
 
@@ -135,42 +134,41 @@ public class GuitarFragment extends Fragment {
         guitar_btn_arr[1][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(guitar_soundpool[1][1], 1.0f, 1.0f, 1, 0, 1.0f);
-
+                pushBtn(1, 1, "#643C34", "#301713", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
 
         guitar_btn_arr[1][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(guitar_soundpool[0][0], 1.0f, 1.0f, 1, 0, 1.0f);
-
+                pushBtn(1, 2, "#C0FCE2", "#73C7B0", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
 
         guitar_btn_arr[1][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                pushBtn(1, 3, "#FF72E0", "#F898B3", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
         guitar_btn_arr[2][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                pushBtn(2, 0, "#A8241F", "#3E1116", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
 
         guitar_btn_arr[2][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                pushBtn(2, 1, "#566BC4", "#393E95", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
             }
         });
 
         guitar_btn_arr[2][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pushBtn(2, 2, "#E8AAE9", "#C7B6ED", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
 
             }
         });
@@ -178,12 +176,14 @@ public class GuitarFragment extends Fragment {
         guitar_btn_arr[2][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pushBtn(2, 3, "#02C4BB", "#7C5E78", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
 
             }
         });
         guitar_btn_arr[3][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pushBtn(3, 0, "#F6D345", "#FE9402", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
 
             }
         });
@@ -191,6 +191,7 @@ public class GuitarFragment extends Fragment {
         guitar_btn_arr[3][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pushBtn(3, 1, "#4FBEC9", "#3B9CA2", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
 
             }
         });
@@ -198,6 +199,7 @@ public class GuitarFragment extends Fragment {
         guitar_btn_arr[3][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pushBtn(3, 2, "#D76FAC", "#C6446A", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
 
             }
         });
@@ -205,6 +207,7 @@ public class GuitarFragment extends Fragment {
         guitar_btn_arr[3][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pushBtn(3, 3, "#E50914", "#B1060F", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
 
             }
         });
@@ -232,12 +235,12 @@ public class GuitarFragment extends Fragment {
         }, (long) guitar_sound_duration[i][j]);
     }
 
-    private void setGradientAnim(AppCompatButton button, String colorCenter, String colorEdge, long soundDuration) {
+    private void setGradientAnim(AppCompatButton button, String centerColor, String edgeColor, long soundDuration) {
         button.post(() -> {
             // draw gradient
             GradientDrawable gradientDrawable = new GradientDrawable(
                     GradientDrawable.Orientation.TL_BR,
-                    new int[]{Color.WHITE, Color.parseColor(colorEdge), Color.parseColor(colorCenter)}
+                    new int[]{Color.parseColor("#d5d5d5"), Color.parseColor(centerColor), Color.parseColor(edgeColor)}
             );
 
             // gradient img shape
@@ -246,7 +249,7 @@ public class GuitarFragment extends Fragment {
             gradientDrawable.setGradientType(GradientDrawable.RADIAL_GRADIENT);
 
             // gradient animation
-            ValueAnimator animator = ValueAnimator.ofFloat(50f, 250f);
+            ValueAnimator animator = ValueAnimator.ofFloat(150f, 250f);
             animator.setDuration(soundDuration / 2);
             animator.setRepeatMode(ValueAnimator.REVERSE);
             animator.setRepeatCount(ValueAnimator.INFINITE);
@@ -275,6 +278,25 @@ public class GuitarFragment extends Fragment {
         return (int) (dp * button.getContext().getResources().getDisplayMetrics().density);
     }
 
+    private int dpToPx(int dp) {
+        return (int) (dp);
+    }
+
+    private InsetDrawable setOriginalBackground(){
+        GradientDrawable gradientDrawable = new GradientDrawable(
+                GradientDrawable.Orientation.TL_BR,
+                new int[]{Color.parseColor("#252525"),  Color.parseColor("#000000")}
+        );
+
+        gradientDrawable.setShape(GradientDrawable.RECTANGLE);
+        gradientDrawable.setGradientType(GradientDrawable.RADIAL_GRADIENT);
+        gradientDrawable.setGradientRadius(200f);
+        int r = dpToPx(10);
+        gradientDrawable.setCornerRadius(r);
+        int p = dpToPx(10);
+        InsetDrawable insetDrawable = new InsetDrawable(gradientDrawable, p / 2, p, p / 2, p);
+        return insetDrawable;
+    }
 
     @Override
     public void onDestroyView() {
