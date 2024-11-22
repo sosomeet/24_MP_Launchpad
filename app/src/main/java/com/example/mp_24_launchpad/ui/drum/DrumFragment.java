@@ -1,9 +1,16 @@
 package com.example.mp_24_launchpad.ui.drum;
 
+import android.animation.ValueAnimator;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.InsetDrawable;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +19,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.mp_24_launchpad.R;
 import com.example.mp_24_launchpad.databinding.FragmentDrumBinding;
+
 
 public class DrumFragment extends Fragment {
 
     private FragmentDrumBinding binding;
     AppCompatButton drum_btn_arr[][] = new AppCompatButton[4][4];
+    private Handler handler;
+
 
     //private SoundPool soundPool;
     private int soundDrum[] = new int[16];
@@ -35,6 +47,8 @@ public class DrumFragment extends Fragment {
         View root = binding.getRoot();
 
         final GridLayout gridLayout = binding.drumGl;
+        final Drawable originalBackground = setOriginalBackground();
+
 
         for(int i = 0; i< 4; i++){
             for(int j = 0; j< 4; j++){
@@ -49,7 +63,15 @@ public class DrumFragment extends Fragment {
         int[][] drum_sound_id= {
 
         };
+/*
+        int[][] drum_sound_id= {
+                {R.raw.crash_cymbal, R.raw.tom_high, R.raw.tom_mid, R.raw.tom_low},
+                {R.raw.ride_cymbal, R.raw.shaker, R.raw.cowbell, R.raw.highhat_closed},
+                {R.raw.splash_cymbal, R.raw.snare, R.raw.tambourine, R.raw.highhat_opened},
+                {R.raw.kick, R.raw.reverse_cymbal, R.raw.clap, R.raw.rimshot}
 
+        };
+*/
         int[][] drum_soundpool = {
                 {soundPool.load(getContext(), drum_sound_id[0][0], 1),
                         soundPool.load(getContext(), drum_sound_id[0][1], 1),
@@ -72,14 +94,23 @@ public class DrumFragment extends Fragment {
                         soundPool.load(getContext(), drum_sound_id[3][3], 1)}
         };
 
+        float[][] drum_sound_duration = new float[4][4];
+        MediaPlayer mediaPlayer[][] = new MediaPlayer[4][4];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                mediaPlayer[i][j] = MediaPlayer.create(getContext(), drum_sound_id[i][j]);
+                drum_sound_duration[i][j] = mediaPlayer[i][j].getDuration();
+                mediaPlayer[i][j].release();
+            }
+        }
 
+
+        // gonna change all methods below --> pushDrumBtn()
         // crash cymbal
         drum_btn_arr[0][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[0][0], 1.0f,1.0f,1,0,1.0f);
-
-                drum_btn_arr[0][0].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(0,0,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
             }
         });
         // Tom(high)
@@ -233,9 +264,91 @@ public class DrumFragment extends Fragment {
         return root;
     }
 
+
+    private void pushDrumBtn(int i,
+                         int j,
+                         String centerColor,
+                         String edgeColor,
+                         SoundPool soundPool,
+                         int[][] drum_soundpool,
+                         float[][] drum_sound_duration,
+                         Drawable originalBackground){
+        soundPool.play(drum_soundpool[i][j],1.0f, 1.0f,1,0,1.0f);
+
+        setGradientAnim(
+                drum_btn_arr[i][j],
+                centerColor,
+                edgeColor, (long) drum_sound_duration[i][j]
+        );
+
+        handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(()-> {
+            //Drawable orignalBackground = null;
+            drum_btn_arr[i][j].setBackground(originalBackground);
+        }, (long) drum_sound_duration[i][j]);
+
+
+    }
+
+    private void setGradientAnim(AppCompatButton button, String colorCenter, String colorEdge, long soundDuration){
+        button.post(() -> {
+            GradientDrawable gradientDrawable = new GradientDrawable(
+                    GradientDrawable.Orientation.TL_BR,
+                    new int[]{Color.WHITE, Color.parseColor(colorEdge), Color.parseColor(colorCenter)}
+            );
+
+            gradientDrawable.setShape(GradientDrawable.RECTANGLE);
+            gradientDrawable.setGradientType(GradientDrawable.RADIAL_GRADIENT);
+
+            ValueAnimator animator = ValueAnimator.ofFloat(50f, 250f);
+            animator.setDuration(soundDuration / 2);
+            animator.setRepeatMode(ValueAnimator.REVERSE);
+            animator.setRepeatCount(ValueAnimator.INFINITE);
+
+
+            animator.addUpdateListener(animation -> {
+                float radius = (float) animation.getAnimatedValue();
+                gradientDrawable.setGradientRadius(radius);
+                button.invalidate();
+            });
+            animator.start();
+
+            int cornerRadius = dpToPx(button ,4);
+            gradientDrawable.setCornerRadius(cornerRadius);
+            int p = dpToPx(button, 5);
+            InsetDrawable insetDrawable= new InsetDrawable(gradientDrawable,p/2,p,p/2,p);
+
+            button.setBackground(insetDrawable);
+        });
+    }
+    private int dpToPx(AppCompatButton button, int dp) {
+        return (int) (dp * button.getContext().getResources().getDisplayMetrics().density);
+    }
+    
+    private int dpToPx(int dp){
+        return (int) (dp);
+    }
+
+    private InsetDrawable setOriginalBackground(){
+        GradientDrawable gradientDrawable = new GradientDrawable(
+                GradientDrawable.Orientation.TL_BR,
+                new int[]{Color.parseColor("#252525"),  Color.parseColor("#000000")}
+        );
+
+        gradientDrawable.setShape(GradientDrawable.RECTANGLE);
+        gradientDrawable.setGradientType(GradientDrawable.RADIAL_GRADIENT);
+        gradientDrawable.setGradientRadius(200f);
+        int r = dpToPx(10);
+        gradientDrawable.setCornerRadius(r);
+        int p = dpToPx(10);
+        InsetDrawable insetDrawable = new InsetDrawable(gradientDrawable, p / 2, p, p / 2, p);
+        return insetDrawable;
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
 }
+
