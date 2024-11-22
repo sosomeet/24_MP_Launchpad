@@ -59,10 +59,10 @@ public class GuitarFragment extends Fragment {
 
         // bring the guitar resources id from R.raw
         int[][] guitar_sound_raw = {
-                {R.raw.tmp_00, R.raw.tmp_01, R.raw.tmp_02, R.raw.tmp_03},
-                {R.raw.tmp_10, R.raw.tmp_11, R.raw.tmp_00, R.raw.tmp_01},
-                {R.raw.tmp_02, R.raw.tmp_03, R.raw.tmp_10, R.raw.tmp_11},
-                {R.raw.tmp_00, R.raw.tmp_01, R.raw.tmp_02, R.raw.tmp_03}
+                {R.raw.guitar_00, R.raw.guitar_01, R.raw.guitar_02, R.raw.guitar_03},
+                {R.raw.guitar_10, R.raw.guitar_11, R.raw.guitar_12, R.raw.guitar_13},
+                {R.raw.guitar_20, R.raw.guitar_21, R.raw.guitar_22, R.raw.guitar_23},
+                {R.raw.guitar_30, R.raw.guitar_31, R.raw.guitar_32, R.raw.guitar_33}
         };
 
         // set the guitar resources for use soundPool
@@ -232,7 +232,7 @@ public class GuitarFragment extends Fragment {
         handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(() -> {
             guitar_btn_arr[i][j].setBackground(originalBackground);
-        }, (long) guitar_sound_duration[i][j]);
+        }, (long) guitar_sound_duration[i][j]/32);
     }
 
     private void setGradientAnim(AppCompatButton button, String centerColor, String edgeColor, long soundDuration) {
@@ -240,7 +240,7 @@ public class GuitarFragment extends Fragment {
             // draw gradient
             GradientDrawable gradientDrawable = new GradientDrawable(
                     GradientDrawable.Orientation.TL_BR,
-                    new int[]{Color.parseColor("#d5d5d5"), Color.parseColor(centerColor), Color.parseColor(edgeColor)}
+                    new int[]{Color.parseColor("#d5d5d5"), Color.parseColor(centerColor), Color.parseColor(edgeColor), Color.parseColor("#252525"), Color.parseColor("#080808")}
             );
 
             // gradient img shape
@@ -250,9 +250,8 @@ public class GuitarFragment extends Fragment {
 
             // gradient animation
             ValueAnimator animator = ValueAnimator.ofFloat(150f, 250f);
-            animator.setDuration(soundDuration / 2);
+            animator.setDuration(soundDuration / 8);
             animator.setRepeatMode(ValueAnimator.REVERSE);
-            animator.setRepeatCount(ValueAnimator.INFINITE);
 
             animator.addUpdateListener(animation -> {
                 float radius = (float) animation.getAnimatedValue();
