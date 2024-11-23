@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
@@ -110,123 +111,34 @@ public class GuitarFragment extends Fragment {
             }
         }
 
-        guitar_btn_arr[0][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // pushBtn(btn row, btn col, center color, edge color, etc var(DO NOT MISS OR CHANGE))
-                pushBtn(0, 0, "#FF54F4", "#FF00EE", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
+        String centerColor[][] = {
+                {"#FF54F4", "#f8e602", "#FF5876", "#F0C9C2"},
+                {"#00f0ff", "#643C34", "#C0FCE2", "#FF72E0"},
+                {"#A8241F", "#566BC4", "#E8AAE9", "#02C4BB"},
+                {"#F6D345", "#4FBEC9", "#D76FAC", "#E50914"}
+        };
+
+        String edgeColor[][] = {
+                {"#FF00EE", "#4bff21", "#C0263E", "#5AB7FA"},
+                {"#00FFFF", "#301713", "#73C7B0", "#F898B3"},
+                {"#3E1116", "#393E95", "#C7B6ED", "#7C5E78"},
+                {"#FE9402", "#3B9CA2", "#C6446A", "#B1060F"}
+        };
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                final int row = i;
+                final int col = j;
+
+                guitar_btn_arr[i][j].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        pushBtn(row, col, centerColor[row][col], edgeColor[row][col], soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
+
+                    }
+                });
             }
-        });
-
-        guitar_btn_arr[0][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(0, 1, "#f8e602", "#4bff21", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-            }
-        });
-
-        guitar_btn_arr[0][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(0, 2, "#FF5876", "#C0263E", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-            }
-        });
-
-        guitar_btn_arr[0][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(0, 3, "#F0C9C2", "#5AB7FA", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-            }
-        });
-
-        guitar_btn_arr[1][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(1, 0, "#00f0ff", "#00FFFF", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-            }
-        });
-
-        guitar_btn_arr[1][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(1, 1, "#643C34", "#301713", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-            }
-        });
-
-        guitar_btn_arr[1][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(1, 2, "#C0FCE2", "#73C7B0", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-            }
-        });
-
-        guitar_btn_arr[1][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(1, 3, "#FF72E0", "#F898B3", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-            }
-        });
-        guitar_btn_arr[2][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(2, 0, "#A8241F", "#3E1116", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-            }
-        });
-
-        guitar_btn_arr[2][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(2, 1, "#566BC4", "#393E95", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-            }
-        });
-
-        guitar_btn_arr[2][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(2, 2, "#E8AAE9", "#C7B6ED", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-
-            }
-        });
-
-        guitar_btn_arr[2][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(2, 3, "#02C4BB", "#7C5E78", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-
-            }
-        });
-        guitar_btn_arr[3][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(3, 0, "#F6D345", "#FE9402", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-
-            }
-        });
-
-        guitar_btn_arr[3][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(3, 1, "#4FBEC9", "#3B9CA2", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-
-            }
-        });
-
-        guitar_btn_arr[3][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(3, 2, "#D76FAC", "#C6446A", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-
-            }
-        });
-
-        guitar_btn_arr[3][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushBtn(3, 3, "#E50914", "#B1060F", soundPool, guitar_soundpool, guitar_sound_duration, originalBackground);
-
-            }
-        });
-
+        }
 
         return root;
     }
@@ -257,6 +169,47 @@ public class GuitarFragment extends Fragment {
             guitar_btn_arr[i][j].setBackground(originalBackground);
             guitar_icon_arr[i][j].setImageResource(guitar_icon_res_arr[i][j]);
         }, (long) guitar_sound_duration[i][j] / 32);
+    }
+
+
+    private int dpToPx(AppCompatButton button, int dp) {
+        // dp to px method
+        return (int) (dp * button.getContext().getResources().getDisplayMetrics().density);
+    }
+
+    private static int dpToPx(int dp) {
+        return (int) (dp);
+    }
+
+    private InsetDrawable setOriginalBackground() {
+        GradientDrawable gradientDrawable = new GradientDrawable(
+                GradientDrawable.Orientation.TL_BR,
+                new int[]{Color.parseColor("#252525"), Color.parseColor("#000000")}
+        );
+
+        gradientDrawable.setShape(GradientDrawable.RECTANGLE);
+        gradientDrawable.setGradientType(GradientDrawable.RADIAL_GRADIENT);
+        gradientDrawable.setGradientRadius(200f);
+        int r = dpToPx(10);
+        gradientDrawable.setCornerRadius(r);
+        int p = dpToPx(10);
+        InsetDrawable insetDrawable = new InsetDrawable(gradientDrawable, p / 2, p, p / 2, p);
+        return insetDrawable;
+    }
+
+    public static Bitmap makeImageBlack(Bitmap original, int w, int h) {
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(original, dpToPx(50), dpToPx(50), true);
+
+        Bitmap blackBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+
+        Canvas canvas = new Canvas(blackBitmap);
+
+        Paint paint = new Paint();
+        paint.setColorFilter(new PorterDuffColorFilter(0xFF000000, PorterDuff.Mode.SRC_IN));
+
+        canvas.drawBitmap(scaledBitmap, 0, 0, paint);
+
+        return blackBitmap;
     }
 
     private void setGradientAnim(AppCompatButton button, String centerColor, String edgeColor, long soundDuration) {
@@ -296,49 +249,10 @@ public class GuitarFragment extends Fragment {
         });
     }
 
-    private int dpToPx(AppCompatButton button, int dp) {
-        // dp to px method
-        return (int) (dp * button.getContext().getResources().getDisplayMetrics().density);
-    }
-
-    private static int dpToPx(int dp) {
-        return (int) (dp);
-    }
-
-    private InsetDrawable setOriginalBackground() {
-        GradientDrawable gradientDrawable = new GradientDrawable(
-                GradientDrawable.Orientation.TL_BR,
-                new int[]{Color.parseColor("#252525"), Color.parseColor("#000000")}
-        );
-
-        gradientDrawable.setShape(GradientDrawable.RECTANGLE);
-        gradientDrawable.setGradientType(GradientDrawable.RADIAL_GRADIENT);
-        gradientDrawable.setGradientRadius(200f);
-        int r = dpToPx(10);
-        gradientDrawable.setCornerRadius(r);
-        int p = dpToPx(10);
-        InsetDrawable insetDrawable = new InsetDrawable(gradientDrawable, p / 2, p, p / 2, p);
-        return insetDrawable;
-    }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
-
-    public static Bitmap makeImageBlack(Bitmap original, int w, int h) {
-        Bitmap scaledBitmap = Bitmap.createScaledBitmap(original, dpToPx(50), dpToPx(50), true);
-
-        Bitmap blackBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-
-        Canvas canvas = new Canvas(blackBitmap);
-
-        Paint paint = new Paint();
-        paint.setColorFilter(new PorterDuffColorFilter(0xFF000000, PorterDuff.Mode.SRC_IN));
-
-        canvas.drawBitmap(scaledBitmap, 0, 0, paint);
-
-        return blackBitmap;
     }
 }
