@@ -1,8 +1,13 @@
 package com.example.mp_24_launchpad.ui.guitar;
 
 import android.animation.ValueAnimator;
-import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.InsetDrawable;
@@ -15,11 +20,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -31,6 +34,8 @@ public class GuitarFragment extends Fragment {
 
     private FragmentGuitarBinding binding;
     AppCompatButton guitar_btn_arr[][] = new AppCompatButton[4][4];
+    ImageView guitar_icon_arr[][] = new ImageView[4][4];
+    int guitar_icon_res_arr[][] = new int[4][4];
     private Handler handler;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -51,11 +56,21 @@ public class GuitarFragment extends Fragment {
                 int resId = getResources().getIdentifier(buttonId, "id", getContext().getPackageName());
                 guitar_btn_arr[i][j] = root.findViewById(resId);
                 guitar_btn_arr[i][j].setBackground(originalBackground);
+
+                String iconId = "guitar_" + i + j + "_icon";
+                int resId2 = getResources().getIdentifier(iconId, "id", getContext().getPackageName());
+                guitar_icon_arr[i][j] = root.findViewById(resId2);
             }
         }
 
-        SoundPool soundPool = new SoundPool.Builder().setMaxStreams(16).build();
+        guitar_icon_res_arr = new int[][]{
+                {R.drawable.guitar_00_icon, R.drawable.guitar_01_icon, R.drawable.guitar_02_icon, R.drawable.guitar_03_icon},
+                {R.drawable.guitar_10_icon, R.drawable.guitar_11_icon, R.drawable.guitar_12_icon, R.drawable.guitar_13_icon},
+                {R.drawable.guitar_20_icon, R.drawable.guitar_21_icon, R.drawable.guitar_22_icon, R.drawable.guitar_23_icon},
+                {R.drawable.guitar_30_icon, R.drawable.guitar_31_icon, R.drawable.guitar_32_icon, R.drawable.guitar_33_icon}
+        };
 
+        SoundPool soundPool = new SoundPool.Builder().setMaxStreams(16).build();
 
         // bring the guitar resources id from R.raw
         int[][] guitar_sound_raw = {
@@ -220,6 +235,14 @@ public class GuitarFragment extends Fragment {
         // sound priority is higher than change color
         soundPool.play(guitar_soundpool[i][j], 1.0f, 1.0f, 1, 0, 1.0f);
 
+        // icon to black
+        Drawable drawable = guitar_icon_arr[i][j].getDrawable();
+        if (drawable instanceof BitmapDrawable) {
+            Bitmap originalBitmap = ((BitmapDrawable) drawable).getBitmap();
+            Bitmap blackBitmap = makeImageBlack(originalBitmap, guitar_icon_arr[i][j].getWidth(), guitar_icon_arr[i][j].getHeight());
+            guitar_icon_arr[i][j].setImageBitmap(blackBitmap);
+        }
+
         // if sound is called, button color change
         setGradientAnim(
                 guitar_btn_arr[i][j],
@@ -232,7 +255,8 @@ public class GuitarFragment extends Fragment {
         handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(() -> {
             guitar_btn_arr[i][j].setBackground(originalBackground);
-        }, (long) guitar_sound_duration[i][j]/32);
+            guitar_icon_arr[i][j].setImageResource(guitar_icon_res_arr[i][j]);
+        }, (long) guitar_sound_duration[i][j] / 32);
     }
 
     private void setGradientAnim(AppCompatButton button, String centerColor, String edgeColor, long soundDuration) {
@@ -277,14 +301,14 @@ public class GuitarFragment extends Fragment {
         return (int) (dp * button.getContext().getResources().getDisplayMetrics().density);
     }
 
-    private int dpToPx(int dp) {
+    private static int dpToPx(int dp) {
         return (int) (dp);
     }
 
-    private InsetDrawable setOriginalBackground(){
+    private InsetDrawable setOriginalBackground() {
         GradientDrawable gradientDrawable = new GradientDrawable(
                 GradientDrawable.Orientation.TL_BR,
-                new int[]{Color.parseColor("#252525"),  Color.parseColor("#000000")}
+                new int[]{Color.parseColor("#252525"), Color.parseColor("#000000")}
         );
 
         gradientDrawable.setShape(GradientDrawable.RECTANGLE);
@@ -301,5 +325,20 @@ public class GuitarFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public static Bitmap makeImageBlack(Bitmap original, int w, int h) {
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(original, dpToPx(50), dpToPx(50), true);
+
+        Bitmap blackBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+
+        Canvas canvas = new Canvas(blackBitmap);
+
+        Paint paint = new Paint();
+        paint.setColorFilter(new PorterDuffColorFilter(0xFF000000, PorterDuff.Mode.SRC_IN));
+
+        canvas.drawBitmap(scaledBitmap, 0, 0, paint);
+
+        return blackBitmap;
     }
 }
