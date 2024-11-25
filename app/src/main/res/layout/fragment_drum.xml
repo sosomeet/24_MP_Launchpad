@@ -12,21 +12,24 @@
         android:layout_margin="1dp"
         android:columnCount="4"
         android:padding="5dp"
-        android:rowCount="4">
+        android:rowCount="4"
+        android:background="#00000000">
 
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_00_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_00_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_00_btn"
@@ -44,14 +47,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_01_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_01_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_01_btn"
@@ -69,14 +74,17 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_02_icon"
+
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_02_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_02_btn"
@@ -94,14 +102,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_03_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_03_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_03_btn"
@@ -119,14 +129,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_10_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_10_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_10_btn"
@@ -144,14 +156,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_11_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_11_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_11_btn"
@@ -169,14 +183,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_12_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_12_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_12_btn"
@@ -194,14 +210,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_13_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_13_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_13_btn"
@@ -219,14 +237,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_20_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_20_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_20_btn"
@@ -244,14 +264,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_21_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_21_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_21_btn"
@@ -269,14 +291,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_22_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_22_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_22_btn"
@@ -294,14 +318,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_23_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_23_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_23_btn"
@@ -319,14 +345,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_30_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_30_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_30_btn"
@@ -344,14 +372,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_31_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_31_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_31_btn"
@@ -369,14 +399,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_32_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_32_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_32_btn"
@@ -394,14 +426,16 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:backgroundTint="#00000000">
 
             <ImageView
+                android:id="@+id/drum_33_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/drum_33_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/drum_33_btn"

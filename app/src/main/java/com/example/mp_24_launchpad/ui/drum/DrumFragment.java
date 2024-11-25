@@ -61,17 +61,13 @@ public class DrumFragment extends Fragment {
 
 
         int[][] drum_sound_id= {
-
-        };
-/*
-        int[][] drum_sound_id= {
                 {R.raw.crash_cymbal, R.raw.tom_high, R.raw.tom_mid, R.raw.tom_low},
                 {R.raw.ride_cymbal, R.raw.shaker, R.raw.cowbell, R.raw.highhat_closed},
                 {R.raw.splash_cymbal, R.raw.snare, R.raw.tambourine, R.raw.highhat_opened},
                 {R.raw.kick, R.raw.reverse_cymbal, R.raw.clap, R.raw.rimshot}
 
         };
-*/
+
         int[][] drum_soundpool = {
                 {soundPool.load(getContext(), drum_sound_id[0][0], 1),
                         soundPool.load(getContext(), drum_sound_id[0][1], 1),
@@ -111,14 +107,16 @@ public class DrumFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 pushDrumBtn(0,0,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
+
             }
         });
+
+
         // Tom(high)
         drum_btn_arr[0][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[0][1], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[0][1].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(0,1,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
             }
         });
 
@@ -126,8 +124,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[0][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[0][2], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[0][2].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(0,2,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -136,8 +133,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[0][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[0][3], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[0][3].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(0,3,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -146,8 +142,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[1][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[1][0], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[1][0].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(1,0,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -156,8 +151,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[1][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[1][1], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[1][1].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(1,1,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -166,8 +160,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[1][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[1][2], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[1][2].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(1,2,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -176,8 +169,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[1][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[1][3], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[1][3].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(1,3,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -186,8 +178,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[2][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[2][0], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[2][0].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(2,0,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -196,8 +187,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[2][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[2][1], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[2][1].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(2,1,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -206,9 +196,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[2][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[2][2], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[2][2].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
-
+                pushDrumBtn(2,2,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
             }
         });
 
@@ -216,9 +204,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[2][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[2][3], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[2][3].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
-
+                pushDrumBtn(2,3,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
             }
         });
 
@@ -226,8 +212,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[3][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[3][0], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[3][0].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(3,0,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -236,8 +221,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[3][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[3][1], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[3][1].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(3,1,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -246,8 +230,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[3][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[3][2], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[3][2].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(3,2,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -256,8 +239,7 @@ public class DrumFragment extends Fragment {
         drum_btn_arr[3][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(drum_soundpool[3][3], 1.0f,1.0f,1,0,1.0f);
-                drum_btn_arr[3][3].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#DD0000")));
+                pushDrumBtn(3,3,"#DD0000","#DD0000",soundPool, drum_soundpool, drum_sound_duration, originalBackground);
 
             }
         });
@@ -266,13 +248,13 @@ public class DrumFragment extends Fragment {
 
 
     private void pushDrumBtn(int i,
-                         int j,
-                         String centerColor,
-                         String edgeColor,
-                         SoundPool soundPool,
-                         int[][] drum_soundpool,
-                         float[][] drum_sound_duration,
-                         Drawable originalBackground){
+                             int j,
+                             String centerColor,
+                             String edgeColor,
+                             SoundPool soundPool,
+                             int[][] drum_soundpool,
+                             float[][] drum_sound_duration,
+                             Drawable originalBackground){
         soundPool.play(drum_soundpool[i][j],1.0f, 1.0f,1,0,1.0f);
 
         setGradientAnim(
@@ -324,7 +306,7 @@ public class DrumFragment extends Fragment {
     private int dpToPx(AppCompatButton button, int dp) {
         return (int) (dp * button.getContext().getResources().getDisplayMetrics().density);
     }
-    
+
     private int dpToPx(int dp){
         return (int) (dp);
     }
@@ -351,4 +333,3 @@ public class DrumFragment extends Fragment {
         binding = null;
     }
 }
-
