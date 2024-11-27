@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (currentId == R.id.navigation_drum) {
                 container.setBackgroundResource(R.drawable.drum_background);
             } else if (currentId == R.id.navigation_piano) {
-                Toast.makeText(getApplicationContext(), "현재 Fragment는 PianoFragment입니다.", Toast.LENGTH_SHORT).show();
+                container.setBackgroundResource(R.color.darkblack);
             } else {
                 System.out.println("알 수 없는 Fragment입니다.");
             }

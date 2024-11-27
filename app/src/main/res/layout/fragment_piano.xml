@@ -15,18 +15,19 @@
         android:rowCount="4">
 
         <FrameLayout
+            android:id="@+id/piano_00_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_00_icon"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_00_btn"
@@ -35,23 +36,25 @@
                 android:clickable="true"
                 android:contentDescription="@string/tmp"
                 android:focusable="true"
-                android:text="" />
+                android:text=""
+                />
 
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_01_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_01_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_01_btn"
@@ -65,18 +68,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_02_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_02_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_02_btn"
@@ -90,18 +94,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_03_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_03_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_03_btn"
@@ -115,18 +120,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_10_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_10_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_10_btn"
@@ -140,18 +146,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_11_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_11_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_11_btn"
@@ -165,18 +172,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_12_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_12_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_12_btn"
@@ -190,18 +198,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_13_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_13_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_13_btn"
@@ -215,18 +224,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_20_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_20_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_20_btn"
@@ -240,18 +250,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_21_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_21_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_21_btn"
@@ -265,18 +276,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_22_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_22_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_22_btn"
@@ -290,18 +302,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_23_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_23_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_23_btn"
@@ -315,18 +328,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_30_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_30_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_30_btn"
@@ -340,18 +354,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_31_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_31_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_31_btn"
@@ -365,18 +380,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_32_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_32_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_32_btn"
@@ -390,18 +406,19 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/piano_33_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/white">
+            android:background="@color/darkblack">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:elevation="3dp"
-                android:src="@drawable/tmpimg" />
+                android:src="@drawable/piano_33_icon" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/piano_33_btn"
