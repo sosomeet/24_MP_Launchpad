@@ -15,14 +15,14 @@
         android:rowCount="4">
 
         <FrameLayout
-            android:id="@+id/piano_00_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_00_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -42,14 +42,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_01_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_01_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -68,14 +68,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_02_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_02_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -94,14 +94,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_03_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_03_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -120,14 +120,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_10_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_10_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -146,14 +146,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_11_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_11_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -172,14 +172,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_12_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_12_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -198,14 +198,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_13_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_13_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -224,14 +224,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_20_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_20_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -250,14 +250,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_21_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_21_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -276,14 +276,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_22_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_22_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -302,14 +302,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_23_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_23_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -328,14 +328,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_30_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_30_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -354,14 +354,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_31_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_31_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -380,14 +380,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_32_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_32_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -406,14 +406,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/piano_33_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:background="@color/darkblack">
+            android:background="#00000000">
 
             <ImageView
+                android:id="@+id/piano_33_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"

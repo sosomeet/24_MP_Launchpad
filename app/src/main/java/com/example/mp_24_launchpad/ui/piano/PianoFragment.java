@@ -1,8 +1,6 @@
 package com.example.mp_24_launchpad.ui.piano;
 
-import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.InsetDrawable;
@@ -11,13 +9,11 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -57,11 +53,9 @@ public class PianoFragment extends Fragment {
                 piano_btn_arr[i][j] = root.findViewById(resId);
                 piano_btn_arr[i][j].setBackground(originalBackground);
 
-                String iconId = "guitar_" + i + j + "_icon";
+                String iconId = "piano_" + i + j + "_icon";
                 int resId2 = getResources().getIdentifier(iconId, "id", getContext().getPackageName());
                 piano_icon_arr[i][j] = root.findViewById(resId2);
-                Toast.makeText(getContext(), "whyrano111", Toast.LENGTH_SHORT).show();
-
             }
         }
 
