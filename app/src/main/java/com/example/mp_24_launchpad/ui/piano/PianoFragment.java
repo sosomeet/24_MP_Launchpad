@@ -130,19 +130,20 @@ public class PianoFragment extends Fragment {
         soundPool.play(piano_soundpool[i][j], 1.0f, 1.0f, 1, 0, 1.0f);
 
         // 버튼과 아이콘 색상 변경
-        piano_btn_arr[i][j].setBackgroundColor(Color.parseColor("#A0A0A0")); // 버튼 색상 변경
-
-        final int borderWidth = dpToPx(2); // 테두리 두께 설정
+        final int borderWidth = dpToPx(5); // 테두리 두께 설정
         GradientDrawable borderDrawable = new GradientDrawable();
+        borderDrawable.setColor(Color.parseColor("#d5d5d5"));
         borderDrawable.setShape(GradientDrawable.RECTANGLE);
-        borderDrawable.setStroke(borderWidth, Color.parseColor("#FFD700")); // 금색 (Gold)
+        borderDrawable.setStroke(borderWidth, Color.parseColor("#F0CD01")); // 금색 (Gold)
+        int r = dpToPx(10);
+        borderDrawable.setCornerRadius(r);
         piano_btn_arr[i][j].setBackground(borderDrawable);
         // 음악이 끝난 후 색상 롤백
         handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(() -> {
             piano_btn_arr[i][j].setBackground(originalBackground); // 버튼 색상 원래대로
             piano_icon_arr[i][j].setImageResource(piano_icon_res_arr[i][j]); // 아이콘 원래대로
-        }, (long) piano_sound_duration[i][j]/32);
+        }, (long) piano_sound_duration[i][j]/4);
     }
     private static int dpToPx(int dp) {
         return (int) (dp);
